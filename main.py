@@ -41,13 +41,13 @@ while True:
         # Obsługa klawiatury
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:
-                paletka1_predkosc = -0.5
+                paletka1_predkosc = -0.2
             if event.key == pygame.K_s:
-                paletka1_predkosc = 0.5
+                paletka1_predkosc = 0.2
             if event.key == pygame.K_UP:
-                paletka2_predkosc = -0.5
+                paletka2_predkosc = -0.2
             if event.key == pygame.K_DOWN:
-                paletka2_predkosc = 0.5
+                paletka2_predkosc = 0.2
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_w or event.key == pygame.K_s:
                 paletka1_predkosc = 0
