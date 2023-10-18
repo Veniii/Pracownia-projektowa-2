@@ -1,5 +1,6 @@
 import pygame
 import random
+import math
 
 # Inicjalizacja Pygame
 pygame.init()
@@ -26,8 +27,16 @@ paletka2_predkosc = 0
 
 # Inicjalizacja piłki
 pilka_szerokosc = 10
-pilka_predkosc_x = 0.1
-pilka_predkosc_y = 0.1
+# pilka_predkosc_x = 0.1
+# pilka_predkosc_y = 0.1
+# pilka_predkosc_x = random.uniform(-0.3, 0.3)  # Losowa prędkość w poziomie
+#  random.uniform(-0.3, 0.3)  # Losowa prędkość w pionie
+predkosc_calkowita = 0.1
+kierunek = random.uniform(0, 2 * math.pi)  # Losowy kierunek w radianach
+while abs(math.degrees(kierunek) - 90) <= 30:
+    kierunek = random.uniform(0, 2 * math.pi)  # Wyklucz kierunek 30 stopni góra-dół
+pilka_predkosc_x = predkosc_calkowita * math.cos(kierunek)  # Prędkość w poziomie
+pilka_predkosc_y = predkosc_calkowita * math.sin(kierunek)  # Prędkość w pionie
 pilka_x = szerokosc // 2 - pilka_szerokosc // 2
 pilka_y = wysokosc // 2 - pilka_szerokosc // 2
 
