@@ -87,5 +87,25 @@ while True:
     pygame.draw.rect(ekran, bialy, (paletka2_x, paletka2_y, paletka_szerokosc, paletka_wysokosc))
     pygame.draw.ellipse(ekran, bialy, (pilka_x, pilka_y, pilka_szerokosc, pilka_szerokosc))
 
+    # Aktualizacja pozycji paletki gracza 1
+    paletka1_y += paletka1_predkosc
+
+    # Sprawdź, czy paletka gracza 1 nie wychodzi poza górny i dolny kraniec ekranu
+    if paletka1_y < 0:
+        paletka1_y = 0
+    elif paletka1_y > wysokosc - paletka_wysokosc:
+        paletka1_y = wysokosc - paletka_wysokosc
+
+    # Aktualizacja pozycji paletki gracza 2
+    paletka2_y += paletka2_predkosc
+
+    # Sprawdź, czy paletka gracza 2 nie wychodzi poza górny i dolny kraniec ekranu
+    if paletka2_y < 0:
+        paletka2_y = 0
+    elif paletka2_y > wysokosc - paletka_wysokosc:
+        paletka2_y = wysokosc - paletka_wysokosc
+
     # Aktualizacja ekranu
     pygame.display.update()
+
+
